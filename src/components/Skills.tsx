@@ -118,7 +118,6 @@ export default function Skills() {
   const [pinned, setPinned] = useState<string | null>(null);
 
   const stackRow = useMemo(() => {
-    // Top icons row (premium)
     const picks = [
       { name: "React", Icon: SiReact },
       { name: "Next.js", Icon: SiNextdotjs },
@@ -143,7 +142,6 @@ export default function Skills() {
       return matchesCategory && matchesQuery;
     })
       .sort((a, b) => {
-        // pinned first, then featured, then by level
         if (pinned) {
           if (a.name === pinned) return -1;
           if (b.name === pinned) return 1;
@@ -157,14 +155,12 @@ export default function Skills() {
 
   return (
     <section id="skills" className="relative overflow-hidden bg-slate-900 py-20 px-6">
-      {/* background blobs */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-blue-600/10 blur-3xl" />
         <div className="absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-indigo-500/10 blur-3xl" />
       </div>
 
       <div className="relative max-w-6xl mx-auto">
-        {/* Get In Touch style title */}
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -172,9 +168,10 @@ export default function Skills() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Skills</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">Learning Areas</h2>
           <p className="mt-3 text-slate-400 text-lg">
-            Tech stack, tools, and strengths I use to build real-world products
+            Technologies and engineering areas strengthened through coursework,
+            certifications, and applied project practice
           </p>
           <motion.div
             initial={{ width: 0 }}
@@ -185,7 +182,6 @@ export default function Skills() {
           />
         </motion.div>
 
-        {/* Premium tech stack row */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -196,8 +192,8 @@ export default function Skills() {
           <GlowCard className="p-5">
             <div className="flex items-center justify-between gap-4 flex-wrap">
               <div>
-                <p className="text-sm text-slate-400">Tech Stack</p>
-                <p className="text-slate-200 font-medium">Core tools I’m most confident with</p>
+                <p className="text-sm text-slate-400">Academic Toolkit</p>
+                <p className="text-slate-200 font-medium">Core tools I rely on most in project work</p>
               </div>
               <div className="flex items-center gap-3 flex-wrap justify-end">
                 {stackRow.map(({ name, Icon }) => (
@@ -224,7 +220,7 @@ export default function Skills() {
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search skills (e.g., Docker, Next, JWT...)"
+                placeholder="Search learning areas (e.g., Docker, Next, JWT...)"
                 className="w-full rounded-xl bg-black/40 border border-slate-800 px-4 py-3 text-slate-200 placeholder:text-slate-500 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition"
               />
               {query ? (
@@ -322,7 +318,7 @@ export default function Skills() {
 
                   <div className="mt-5">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-slate-400">Confidence</span>
+                      <span className="text-xs text-slate-400">Familiarity</span>
                       <span className="text-xs text-slate-200">{clamp(skill.level, 0, 100)}%</span>
                     </div>
                     <div className="mt-2 h-2 w-full rounded-full bg-slate-800 overflow-hidden">
@@ -337,10 +333,8 @@ export default function Skills() {
                   </div>
 
                   <div className="mt-5 flex items-center justify-between text-xs text-slate-500">
-                    <span className="opacity-0 group-hover:opacity-100 transition">
-                      Click to {isPinned ? "unpin" : "pin"}
-                    </span>
-                    <span className="text-slate-400 hover:text-blue-300 transition">Premium ✦</span>
+                    <span>{isPinned ? "Pinned for quick review" : "Click to pin"}</span>
+                    <span className="text-slate-400">Coursework + projects</span>
                   </div>
                 </GlowCard>
               </motion.div>
@@ -351,7 +345,7 @@ export default function Skills() {
         {/* Empty state */}
         {filtered.length === 0 ? (
           <div className="mt-10 rounded-2xl border border-slate-800 bg-black/40 p-8 text-slate-300">
-            No skills match your search. Try a different keyword.
+            No learning areas match your search. Try a different keyword.
           </div>
         ) : null}
       </div>

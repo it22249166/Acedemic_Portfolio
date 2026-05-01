@@ -42,7 +42,7 @@ export default function Certificates() {
         skillImproved: "Python fundamentals",
         proof:
           "Strengthened core Python syntax, data types, control flow, and problem solving.",
-        file: "/certificates/pythonbeginners.pdf",
+        file: "/certificates/Pythonbeginners.pdf",
       },
       {
         title: "Python Programming",
@@ -51,7 +51,7 @@ export default function Certificates() {
         type: "Technical",
         skillImproved: "Python programming practice",
         proof: "Improved hands-on programming and writing cleaner, reusable code.",
-        file: "/certificates/pythonProgramming.pdf",
+        file: "/certificates/PythonProgramming.pdf",
       },
       {
         title: "GE Aerospace – Explore Digital Technology (Forage)",
@@ -61,9 +61,7 @@ export default function Certificates() {
         skillImproved: "Frontend + requirements translation",
         proof:
           "Built a Vue UI demo and drafted technical requirements aligned to business needs.",
-        // ✅ put this PDF inside: public/certificates/GEaerospace.pdf
-        file: "/certificates/GEaerospace.pdf"
-        // link: "https://verify-link-if-you-have"
+        file: "/certificates/GEaerospace.pdf",
       },
       {
         title: "Skyscanner – Front-End Software Engineering (Forage)",
@@ -83,7 +81,7 @@ export default function Certificates() {
         skillImproved: "Security awareness (password hashing)",
         proof:
           "Identified weak hashing, tested using Hashcat, and proposed security uplifts.",
-        file: "/certificates/goldsmansachs.pdf"
+        file: "/certificates/goldsmansachs.pdf",
       },
       {
         title: "Verizon – Cloud VPN Simulation (Forage)",
@@ -94,6 +92,16 @@ export default function Certificates() {
         proof:
           "Tested VPN traits (redundancy, resiliency, least privilege) and presented findings.",
         file: "/certificates/verizon.pdf",
+      },
+      {
+        title: "Software Engineering Job Simulation",
+        issuer: "New York Jobs CEO Council / Forage",
+        date: "2024",
+        type: "Technical",
+        skillImproved: "Problem solving and software engineering workflow",
+        proof:
+          "Practiced structured engineering tasks in a simulated environment and connected technical output to business expectations.",
+        file: "/certificates/newyork.pdf",
       },
     ],
     []
@@ -318,6 +326,7 @@ export default function Certificates() {
                   <a
                     href={open.file}
                     target="_blank"
+                    rel="noreferrer"
                     className="inline-flex items-center gap-2 rounded-xl border border-slate-800 bg-black/30 px-3 py-2 text-slate-200 hover:border-blue-600 hover:text-blue-200 transition"
                   >
                     <FiExternalLink /> Open
@@ -335,6 +344,7 @@ export default function Certificates() {
                     <a
                       href={open.link}
                       target="_blank"
+                      rel="noreferrer"
                       className="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-800 bg-black/30 px-3 py-2 text-slate-200 hover:border-blue-600 hover:text-blue-200 transition"
                     >
                       <FiExternalLink /> Verify

@@ -21,29 +21,38 @@ const projects: Project[] = [
   {
     title: "AI-Dress-Mart",
     description:
-      "An AI-powered dress shopping project with frontend and backend structure. Includes a shop page and full repository setup.",
+      "An exploratory academic-style full-stack project that studies how AI-themed e-commerce experiences can be structured across frontend and backend layers.",
     tech: ["JavaScript", "MERN", "React", "Node.js", "MongoDB"],
     github: "https://github.com/it22249166/AI-Dress-Mart",
-    image: "/projects/ai-dress-mart.jpg",
-    highlights: ["Frontend + Backend folders", "Shop page", "Full-stack structure"],
+    highlights: [
+      "Frontend and backend separation",
+      "Catalog and shopping flow structure",
+      "Applied MERN architecture practice",
+    ],
   },
   {
     title: "Foods-Ordering-App",
     description:
-      "A full-stack food ordering system with client/server separation and Docker Compose deployment guide.",
+      "A full-stack ordering system used to practice client-server separation, API integration, and deployment-oriented thinking with Docker.",
     tech: ["JavaScript", "React", "Node.js", "Docker", "MongoDB"],
     github: "https://github.com/it22249166/Foods-Ordering-App",
-    image: "/projects/foods-ordering-app.jpg",
-    highlights: ["client + server structure", "Docker Compose", "Deployment guide README"],
+    highlights: [
+      "Client and server project structure",
+      "Docker Compose workflow",
+      "Deployment-focused README guidance",
+    ],
   },
   {
     title: "Image Processing Tool",
     description:
-      "A web application that allows users to upload images and apply various filters and transformations in real-time.",
+      "A Python-based applied computing project focused on image upload, transformation, and real-time experimentation with core image-processing concepts.",
     tech: ["Python", "Jupyter Notebook", "OpenCV", "NumPy"],
-    live: "https://your-live-link.com",
     github: "https://github.com/it22249166/Image-Processing-Tool.git",
-    highlights: ["Real-time filters", "Upload & preview", "OpenCV transforms"],
+    highlights: [
+      "Real-time filter experimentation",
+      "Image upload and preview workflow",
+      "OpenCV-based transformations",
+    ],
   },
 ];
 
@@ -93,11 +102,12 @@ export default function Projects() {
             className="text-center"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white">
-              Projects
+              Academic Projects
             </h2>
 
             <p className="mt-3 text-slate-400 text-lg">
-              Search projects, filter by tech, and explore highlights
+              Coursework-inspired builds and self-directed project work used to
+              strengthen practical software engineering skills
             </p>
 
             <motion.div
@@ -122,7 +132,7 @@ export default function Projects() {
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search projects (e.g., Docker, React)..."
+                placeholder="Search academic work (e.g., Docker, React, Python)..."
                 className="w-full rounded-xl bg-slate-900/40 border border-slate-800 pl-11 pr-10 py-3 text-slate-200 placeholder:text-slate-500 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 transition"
               />
               {query ? (
@@ -181,7 +191,7 @@ export default function Projects() {
               <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                 <div>
                   <span className="inline-flex items-center rounded-full border border-blue-600/40 bg-blue-600/10 px-3 py-1 text-xs text-blue-200">
-                    Featured
+                    Featured Academic Work
                   </span>
                   <h3 className="mt-3 text-2xl md:text-3xl font-bold text-slate-100">
                     {featured.title}
@@ -352,7 +362,7 @@ export default function Projects() {
         {/* Empty state */}
         {filtered.length === 0 ? (
           <div className="mt-10 rounded-2xl border border-slate-800 bg-slate-900/40 p-8 text-slate-300">
-            No projects match your search/filter. Try another keyword or tech.
+            No academic projects match your search or filter. Try another keyword or tool.
           </div>
         ) : null}
       </div>

@@ -34,7 +34,7 @@ export default function ReflectiveJournal() {
           "Outlined a personal brand direction for my portfolio (clean UI, premium style).",
         ],
         reflection:
-          "I realized that being “good at coding” is not enough. PPW pushed me to think about how I communicate my value, how I structure my growth, and how I prove skills with artifacts. This helped me shift from a student mindset to a professional mindset.",
+          "I realized that being good at coding is not enough on its own. PPW pushed me to think about how I communicate progress, how I structure growth, and how I prove skills with evidence. This helped me become more intentional about my academic identity and development.",
         nextSteps: [
           "Define measurable goals for the semester (e.g., deploy 2 projects with CI/CD).",
           "Start tracking progress weekly in a journal format.",
@@ -42,20 +42,20 @@ export default function ReflectiveJournal() {
       },
       {
         week: "Week 2",
-        title: "Portfolio structure & professional presentation",
+        title: "Portfolio structure & evidence-based presentation",
         focus:
-          "Designing a portfolio that is recruiter-friendly and aligned with a personal brand.",
+          "Designing an academic portfolio that presents reflection, projects, and supporting evidence clearly.",
         learned: [
-          "How to structure a portfolio: About → Skills → Projects → Evidence → Contact.",
-          "Why storytelling matters: problem → approach → results → impact.",
-          "How micro-interactions (animation, UX) make the portfolio feel premium.",
+          "How to structure a portfolio: profile → projects → learning areas → evidence → contact.",
+          "Why storytelling matters: context → approach → outcome → reflection.",
+          "How layout and micro-interactions improve clarity and engagement.",
         ],
         evidence: [
-          "Implemented interactive sections (Skills filters, Projects spotlight, animated SVG logo).",
-          "Created a separate Academic mode to keep the professional portfolio clean.",
+          "Implemented interactive sections such as searchable projects, learning filters, and guided journal content.",
+          "Reframed the site as a dedicated academic portfolio instead of hiding academic work behind a separate mode.",
         ],
         reflection:
-          "This week made me understand that the portfolio is a product. Small details like clarity, navigation, and consistency of design can change how a recruiter perceives competence. I also learned how to separate audiences: recruiters want impact; lecturers want structured evidence.",
+          "This week made me understand that the portfolio is a product. Small details like clarity, navigation, and consistency of design can change how an academic reviewer understands my work. I also learned how important it is to connect evidence with reflection instead of only listing achievements.",
         nextSteps: [
           "Add clear project outcomes (performance, features, user stories).",
           "Create certificate and CV sections with proper evidence and dates.",
@@ -76,7 +76,7 @@ export default function ReflectiveJournal() {
           "Identified improvement areas: test automation, system design basics, deployment & monitoring.",
         ],
         reflection:
-          "PPW helped me stop thinking randomly about the future. I now plan with clear targets and actions. Instead of “I want a good job,” I define “I will become strong in full-stack development + testing + deployment” and create measurable steps. This approach reduces uncertainty and increases confidence.",
+          "PPW helped me stop thinking randomly about the future. I now plan with clear targets and actions. Instead of vague goals, I define practical development areas such as full-stack engineering, testing, and deployment, then turn them into measurable next steps. This approach reduces uncertainty and increases confidence.",
         nextSteps: [
           "Complete one certification focused on testing or cloud deployment.",
           "Add measurable project metrics (load time, API performance, Lighthouse score).",
@@ -93,11 +93,11 @@ export default function ReflectiveJournal() {
           "How reflection helps continuous improvement: review → learn → adjust.",
         ],
         evidence: [
-          "Improved portfolio wording to be concise and professional.",
-          "Added structured sections for academic submission without harming the professional brand.",
+          "Improved portfolio wording to be clearer, more concise, and better aligned with academic review.",
+          "Added structured academic sections so that reflection, certificates, and career planning are easy to assess.",
         ],
         reflection:
-          "The biggest change is how I present myself. PPW made me more intentional: I write clearly, I document work, and I think about outcomes. These skills matter in real teams just as much as programming skills.",
+          "The biggest change is how I present myself. PPW made me more intentional: I write clearly, I document work, and I think about outcomes. These skills strengthen both academic performance and future professional readiness.",
         nextSteps: [
           "Maintain a monthly reflection even after PPW ends.",
           "Seek feedback from mentors and iterate the portfolio continuously.",
@@ -128,7 +128,7 @@ export default function ReflectiveJournal() {
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-blue-600/30 bg-blue-600/10 px-4 py-2 text-blue-200">
             <FiBookOpen />
-            Academic Portfolio
+            PPW Reflection
           </div>
 
           <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-white">
@@ -200,7 +200,7 @@ export default function ReflectiveJournal() {
                 </div>
 
                 <div className="rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white/80 text-sm">
-                  Mode: <span className="text-blue-300 font-semibold">Academic</span>
+                  Section: <span className="text-blue-300 font-semibold">Reflective Evidence</span>
                 </div>
               </div>
 
@@ -251,8 +251,8 @@ export default function ReflectiveJournal() {
               </div>
 
               <p className="mt-8 text-xs text-white/50">
-                Note: Content is presented in Academic Mode for PPW assessment requirements. Professional Mode
-                keeps recruiter-focused sections only.
+                This section documents weekly PPW reflection and the practical
+                evidence connected to each stage of growth.
               </p>
             </div>
           </motion.div>

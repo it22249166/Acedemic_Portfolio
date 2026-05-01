@@ -22,13 +22,12 @@ export default function CareerPlan() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-white">
-            Career Development <span className="text-blue-500">Plan</span>
+            Academic & Career <span className="text-blue-500">Plan</span>
           </h2>
           <div className="mx-auto mt-4 h-1 w-16 bg-blue-500 rounded-full" />
           <p className="mt-6 text-white/70 max-w-3xl mx-auto leading-relaxed">
-            A structured roadmap outlining my short-term, mid-term, and long-term
-            goals as a Software Engineering undergraduate aiming to become a
-            highly competent full-stack engineer.
+            A structured roadmap that connects my academic progress with the
+            technical and professional capabilities I want to build over time.
           </p>
         </motion.div>
 
@@ -42,10 +41,10 @@ export default function CareerPlan() {
             </div>
 
             <ul className="space-y-3 text-white/75">
-              <li>✔ Graduate with strong academic performance</li>
-              <li>✔ Secure a full-time Software Engineering role</li>
-              <li>✔ Strengthen testing & system design fundamentals</li>
-              <li>✔ Deploy production-level full-stack applications</li>
+              <li>✔ Maintain strong academic performance</li>
+              <li>✔ Complete high-quality portfolio and capstone-style projects</li>
+              <li>✔ Strengthen testing and system design fundamentals</li>
+              <li>✔ Deploy polished full-stack applications</li>
               <li>✔ Earn at least one cloud or testing certification</li>
             </ul>
           </div>
@@ -58,11 +57,11 @@ export default function CareerPlan() {
             </div>
 
             <ul className="space-y-3 text-white/75">
-              <li>✔ Become a strong full-stack engineer</li>
-              <li>✔ Lead small technical features or modules</li>
-              <li>✔ Gain expertise in scalable system architecture</li>
+              <li>✔ Become a dependable full-stack engineer</li>
+              <li>✔ Lead small technical features or academic-to-industry transitions</li>
+              <li>✔ Gain stronger knowledge of scalable architecture</li>
               <li>✔ Contribute to open-source or community projects</li>
-              <li>✔ Mentor junior developers</li>
+              <li>✔ Support peers through collaboration and mentoring</li>
             </ul>
           </div>
 
@@ -74,11 +73,11 @@ export default function CareerPlan() {
             </div>
 
             <ul className="space-y-3 text-white/75">
-              <li>✔ Become a Senior Software Engineer</li>
+              <li>✔ Grow into a senior engineering role</li>
               <li>✔ Architect scalable distributed systems</li>
-              <li>✔ Build impactful real-world digital products</li>
-              <li>✔ Continuously upgrade skills in emerging tech</li>
-              <li>✔ Possibly start or scale a tech venture</li>
+              <li>✔ Build impactful digital products with clear user value</li>
+              <li>✔ Keep adapting to emerging technologies</li>
+              <li>✔ Explore product leadership or entrepreneurial paths</li>
             </ul>
           </div>
         </div>

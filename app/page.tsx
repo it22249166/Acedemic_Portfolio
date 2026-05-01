@@ -1,7 +1,3 @@
-"use client";
-
-import { usePortfolioMode } from "@/context/PortfolioModeContext";
-
 import Contact from "@/src/components/Contact";
 import Hero from "@/src/components/Hero";
 import Navbar from "@/src/components/Navbar";
@@ -17,30 +13,19 @@ import Certificates from "@/src/components/academic/Certificates";
 import CVSection from "@/src/components/academic/CVSection";
 
 export default function Home() {
-  const { mode } = usePortfolioMode();
-
   return (
-    <>
+    <main className="bg-black text-white">
       <Navbar />
-
-      {/* Professional Sections */}
       <Hero />
       <About />
       <Projects />
       <Skills />
+      <ReflectiveJournal />
+      <CareerPlan />
+      <Certificates />
+      <CVSection />
       <Contact />
-
-      {/* Academic Sections (Only Visible in Academic Mode) */}
-      {mode === "academic" && (
-        <>
-          <ReflectiveJournal />
-          <CareerPlan />
-          <Certificates />
-          <CVSection />
-        </>
-      )}
-
       <Footer />
-    </>
+    </main>
   );
 }

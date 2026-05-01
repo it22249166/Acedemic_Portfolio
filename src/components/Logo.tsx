@@ -148,7 +148,7 @@ export default function SignatureLogo({
           <div className="text-white font-semibold text-lg tracking-tight">
             Malith<span className="text-blue-500">.</span>
           </div>
-          <div className="text-slate-400 text-xs">Software Engineer</div>
+          <div className="text-slate-400 text-xs">Academic Portfolio</div>
         </div>
       )}
     </div>

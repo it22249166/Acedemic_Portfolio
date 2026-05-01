@@ -30,7 +30,6 @@ function StatCounter({ value, suffix, label }: Stat) {
 
     const tick = (now: number) => {
       const t = Math.min(1, (now - start) / durationMs);
-      // easeOutCubic
       const eased = 1 - Math.pow(1 - t, 3);
       setDisplay(Math.round(eased * value));
       if (t < 1) requestAnimationFrame(tick);
@@ -60,80 +59,12 @@ function TimelineDot() {
 }
 
 export default function About() {
-  const certifications: TimelineItem[] = useMemo(
-  () => [
-    {
-      title: "Full Stack React E-Commerce Project",
-      org: "GreatStack",
-      period: "2025",
-      points: [
-        "Built a complete e-commerce application using React.",
-        "Implemented product listing, cart logic, and UI structure.",
-      ],
-    },
-    {
-      title: "Python Programming",
-      org: "University of Moratuwa",
-      period: "2024",
-      points: [
-        "Covered Python fundamentals, OOP, and problem solving.",
-        "Hands-on exercises and real coding practice.",
-      ],
-    },
-    {
-      title: "Front-End Software Engineering Job Simulation",
-      org: "Skyscanner (Forage)",
-      period: "2024",
-      points: [
-        "Built UI components using modern frontend tools.",
-        "Worked with real-world front-end engineering tasks.",
-      ],
-    },
-    {
-      title: "Explore Digital Technology Job Simulation",
-      org: "GE Aerospace (Forage)",
-      period: "2024",
-      points: [
-        "Translated business requirements into technical specifications.",
-        "Worked on product-oriented digital solutions.",
-      ],
-    },
-    {
-      title: "Software Engineering Job Simulation",
-      org: "New York Jobs CEO Council (Forage)",
-      period: "2024",
-      points: [
-        "Solved software engineering tasks in a simulated environment.",
-        "Applied debugging and system design thinking.",
-      ],
-    },
-    {
-      title: "Cloud Platform Job Simulation",
-      org: "Verizon (Forage)",
-      period: "2024",
-      points: [
-        "Worked with cloud-native principles and resiliency concepts.",
-        "Tested redundancy and least-privilege access.",
-      ],
-    },
-    {
-      title: "Software Engineering Simulation",
-      org: "Goldman Sachs (Forage)",
-      period: "2024",
-      points: [
-        "Analyzed IT security practices and password hashing.",
-        "Proposed improvements for stronger authentication systems.",
-      ],
-    },
-  ],
-  []
-);
   const stats: Stat[] = useMemo(
     () => [
-      { value: 3, suffix: "+", label: "Years Learning" },
-      { value: 10, suffix: "+", label: "Projects Built" },
-      { value: 15, suffix: "+", label: "Technologies" },
-      { value: 100, suffix: "%", label: "Commitment" },
+      { value: 4, label: "Academic Years" },
+      { value: 3, suffix: "+", label: "Flagship Projects" },
+      { value: 7, label: "Certificates" },
+      { value: 4, suffix: "+", label: "Journal Entries" },
     ],
     []
   );
@@ -141,48 +72,44 @@ export default function About() {
   const timeline: TimelineItem[] = useMemo(
     () => [
       {
-        title: "Digital Technology Intern",
-        org: "GE Aerospace",
-        period: "2024 – Present",
-        points: [
-          "Built UI components and small web features using modern frontend tools.",
-          "Translated business requirements into technical requirements as a product owner.",
-          "Worked with best practices: testing, performance, and integration checks.",
-        ],
-      },
-      {
         title: "BSc (Hons) Software Engineering",
         org: "SLIIT",
-        period: "2022 – 2026 (Expected)",
+        period: "2022 – Present",
         points: [
-          "Studying software engineering fundamentals, architecture, and testing.",
-          "Hands-on work with React, Node.js, Spring Boot, and databases.",
+          "Developing fundamentals in programming, software design, databases, and engineering process.",
+          "Building a stronger academic identity through project work, reflection, and evidence-based learning.",
         ],
       },
       {
-        title: "Projects & Practice",
-        org: "Personal / Academic",
-        period: "Ongoing",
+        title: "Applied Project Development",
+        org: "Coursework & Self-Directed Practice",
+        period: "2024 – 2025",
         points: [
-          "Built projects like HostalNet (hostel booking) and Memoire (note-taking).",
-          "Focused on clean UI/UX, scalable structure, and real-world business logic.",
+          "Used React, Next.js, Node.js, and Python to turn classroom concepts into working applications.",
+          "Practiced UI design, API structure, image processing, and full-stack feature delivery.",
+        ],
+      },
+      {
+        title: "Continuous Learning Evidence",
+        org: "Certificates, Reflection, and Career Planning",
+        period: "Current Focus",
+        points: [
+          "Documented learning progress with weekly reflective journal entries for PPW.",
+          "Collected certificates and a structured career plan to demonstrate growth beyond individual assignments.",
         ],
       },
     ],
     []
-    
   );
 
   return (
     <section id="about" className="relative overflow-hidden bg-black py-24 px-6">
-      {/* Background Gradients */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-tr from-purple-500/25 via-pink-500/20 to-blue-500/25 blur-3xl" />
         <div className="absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-gradient-to-tr from-blue-500/25 via-cyan-500/20 to-emerald-500/25 blur-3xl" />
       </div>
 
       <div className="relative max-w-6xl mx-auto">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -191,18 +118,16 @@ export default function About() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-white">
-            About <span className="text-blue-500">Me</span>
+            Academic <span className="text-blue-500">Profile</span>
           </h2>
           <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-blue-500" />
-          <p className="mt-6 text-white/70 max-w-2xl mx-auto">
-            Passionate Software Engineering undergraduate focused on building scalable systems,
-            clean architectures, and impactful digital experiences.
+          <p className="mt-6 max-w-2xl mx-auto text-white/70">
+            A concise overview of my degree path, current learning priorities,
+            academic evidence, and the software engineering strengths I am building.
           </p>
         </motion.div>
 
-        {/* Top Grid */}
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left: Profile card */}
           <motion.div
             initial={{ opacity: 0, x: -26 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -212,23 +137,21 @@ export default function About() {
           >
             <div className="flex items-center gap-4">
               <div className="relative h-20 w-20 overflow-hidden rounded-2xl border border-white/10">
-                {/* Put your image in /public/profile.jpg */}
                 <Image src="/malith.jpeg" alt="Malith Bandara" fill className="object-cover" />
               </div>
               <div>
-                <div className="text-white font-semibold text-xl">Malith Bandara</div>
-                <div className="text-white/70">Software Engineering Student</div>
+                <div className="text-white text-xl font-semibold">Malith Bandara</div>
+                <div className="text-white/70">Software Engineering Undergraduate</div>
               </div>
             </div>
 
             <p className="mt-6 text-white/75 leading-relaxed">
-              I build clean, maintainable full-stack applications with modern technologies.
-              I enjoy turning ideas into reliable products with great UI/UX and strong backend logic.
+              I use this portfolio to show how academic study connects to real
+              software engineering practice. It combines technical work,
+              reflective learning, certificates, and clear evidence of progress.
             </p>
 
-            {/* Buttons */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              {/* Put your CV in /public/Malith_Bandara_CV.pdf */}
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="/Malith_Bandara_CV.pdf"
                 download
@@ -237,20 +160,19 @@ export default function About() {
                 Download CV
               </a>
               <a
-                href="#contact"
+                href="#career-plan"
                 className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white/90 hover:bg-white/10"
               >
-                Let&apos;s Talk
+                View Career Plan
               </a>
             </div>
 
-            {/* Quick highlights */}
             <div className="mt-8 grid grid-cols-2 gap-3">
               {[
-                "React / Next.js",
-                "Node.js / APIs",
-                "Spring Boot",
-                "UI/UX Focus",
+                "SLIIT Undergraduate",
+                "Expected graduation: 2026",
+                "Full-stack project work",
+                "Reflective academic evidence",
               ].map((tag) => (
                 <div
                   key={tag}
@@ -262,7 +184,6 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Right: About + Stats */}
           <motion.div
             initial={{ opacity: 0, x: 26 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -270,35 +191,35 @@ export default function About() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-10 shadow-2xl backdrop-blur relative">
+            <div className="relative rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 to-white/5 p-10 shadow-2xl backdrop-blur">
               <div aria-hidden className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-blue-500/10 via-purple-500/10 to-pink-500/10" />
               <div className="relative">
-                <h3 className="text-2xl font-bold text-white">What I do</h3>
+                <h3 className="text-2xl font-bold text-white">Current Academic Focus</h3>
                 <p className="mt-4 text-white/75 leading-relaxed">
-                  I specialize in full-stack development using React/Next.js, Node.js, and databases.
-                  I focus on clean architecture, performance, and building features that match real business needs.
+                  My current focus is strengthening practical software
+                  engineering ability by connecting coursework with applied
+                  projects, cleaner system thinking, and better technical communication.
                 </p>
 
-                <div className="mt-7 grid sm:grid-cols-2 gap-3">
+                <div className="mt-7 grid gap-3 sm:grid-cols-2">
                   {[
-                    "Clean Architecture",
-                    "REST API Development",
-                    "Modern UI/UX Design",
-                    "Performance Optimization",
-                  ].map((skill) => (
+                    "Software engineering principles",
+                    "Modern web application development",
+                    "Testing and quality thinking",
+                    "Career planning and reflection",
+                  ].map((item) => (
                     <div
-                      key={skill}
+                      key={item}
                       className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white/90"
                     >
-                      {skill}
+                      {item}
                     </div>
                   ))}
                 </div>
 
-                {/* Animated Stats */}
                 <div className="mt-10 grid grid-cols-2 gap-8">
-                  {stats.map((s) => (
-                    <StatCounter key={s.label} {...s} />
+                  {stats.map((stat) => (
+                    <StatCounter key={stat.label} {...stat} />
                   ))}
                 </div>
               </div>
@@ -306,7 +227,6 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* Timeline */}
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -315,12 +235,11 @@ export default function About() {
           className="mt-16"
         >
           <div className="text-center mb-10">
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white">Experience Timeline</h3>
-            <p className="mt-2 text-white/70">A quick overview of what I’ve been doing</p>
+            <h3 className="text-3xl md:text-4xl font-extrabold text-white">Academic Journey</h3>
+            <p className="mt-2 text-white/70">How my study path has translated into practical growth</p>
           </div>
 
           <div className="relative rounded-2xl border border-white/10 bg-white/5 p-8 md:p-10 backdrop-blur">
-            {/* vertical line */}
             <div aria-hidden className="absolute left-6 top-10 bottom-10 w-px bg-white/10" />
 
             <div className="space-y-10">
@@ -330,19 +249,19 @@ export default function About() {
                     <TimelineDot />
                   </div>
 
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                  <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
                     <div>
-                      <div className="text-white font-semibold text-lg">{item.title}</div>
+                      <div className="text-white text-lg font-semibold">{item.title}</div>
                       <div className="text-white/70">{item.org}</div>
                     </div>
-                    <div className="text-white/60 text-sm md:text-base">{item.period}</div>
+                    <div className="text-sm text-white/60 md:text-base">{item.period}</div>
                   </div>
 
                   <ul className="mt-4 space-y-2 text-white/75">
-                    {item.points.map((p) => (
-                      <li key={p} className="flex gap-3">
+                    {item.points.map((point) => (
+                      <li key={point} className="flex gap-3">
                         <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-500" aria-hidden />
-                        <span>{p}</span>
+                        <span>{point}</span>
                       </li>
                     ))}
                   </ul>
@@ -351,58 +270,52 @@ export default function About() {
             </div>
           </div>
         </motion.div>
-        {/* Certifications */}
-<motion.div
-  initial={{ opacity: 0, y: 26 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
-  viewport={{ once: true }}
-  className="mt-20"
->
-  <div className="text-center mb-10">
-    <h3 className="text-3xl md:text-4xl font-extrabold text-white">
-      Licenses & Certifications
-    </h3>
-    <p className="mt-2 text-white/70">
-      Professional certifications and job simulations completed
-    </p>
-  </div>
 
-  <div className="relative rounded-2xl border border-white/10 bg-white/5 p-8 md:p-10 backdrop-blur">
-    <div aria-hidden className="absolute left-6 top-10 bottom-10 w-px bg-white/10" />
-
-    <div className="space-y-10">
-      {certifications.map((item) => (
-        <div key={`${item.title}-${item.period}`} className="relative pl-12">
-          <div className="absolute left-5 top-1.5">
-            <TimelineDot />
+        <motion.div
+          initial={{ opacity: 0, y: 26 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-20"
+        >
+          <div className="text-center mb-10">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-white">
+              Portfolio Coverage
+            </h3>
+            <p className="mt-2 text-white/70">
+              The core evidence areas included in this academic portfolio
+            </p>
           </div>
 
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-            <div>
-              <div className="text-white font-semibold text-lg">
-                {item.title}
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              {
+                title: "Academic Projects",
+                detail: "Applied software engineering work using full-stack and Python-based tools.",
+              },
+              {
+                title: "Reflective Journal",
+                detail: "Weekly PPW reflections showing what I learned, applied, and improved.",
+              },
+              {
+                title: "Certificates",
+                detail: "Verified learning evidence from technical courses and simulations.",
+              },
+              {
+                title: "Career Plan",
+                detail: "A structured roadmap that links current study with long-term growth goals.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur"
+              >
+                <div className="text-lg font-semibold text-white">{item.title}</div>
+                <p className="mt-3 text-sm leading-relaxed text-white/70">{item.detail}</p>
               </div>
-              <div className="text-white/70">{item.org}</div>
-            </div>
-            <div className="text-white/60 text-sm md:text-base">
-              {item.period}
-            </div>
-          </div>
-
-          <ul className="mt-4 space-y-2 text-white/75">
-            {item.points.map((p) => (
-              <li key={p} className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-500" />
-                <span>{p}</span>
-              </li>
             ))}
-          </ul>
-        </div>
-      ))}
-    </div>
-  </div>
-</motion.div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

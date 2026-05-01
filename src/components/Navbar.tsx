@@ -1,176 +1,98 @@
-// "use client";
-
-// import { useEffect, useState } from "react";
-// import { FaMoon, FaSun } from "react-icons/fa";
-// import Logo from "./Logo";
-// import { usePortfolioMode } from "@/context/PortfolioModeContext";
-
-
-// export default function Navbar() {
-//   const { mode, toggle } = usePortfolioMode();
-//   const [scrolled, setScrolled] = useState(false);
-//   const [dark, setDark] = useState(true);
-
-//   // Scroll detection
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setScrolled(window.scrollY > 50);
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   // Dark mode toggle
-//   useEffect(() => {
-//     document.documentElement.classList.toggle("dark", dark);
-//   }, [dark]);
-
-//   return (
-//     <nav
-//       className={`fixed w-full z-50 transition-all duration-300 ${
-//         scrolled
-//           ? "bg-white dark:bg-black shadow-lg"
-//           : "bg-transparent"
-//       }`}
-//     >
-//       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-//         <Logo size={44} withText />
-       
-
-//         <div className="flex items-center gap-6">
-
-//           {/* Navigation Links */}
-//           <div className="space-x-6 text-gray-300 hidden md:flex">
-//             <a href="#" className="hover:text-blue-500 transition">
-//               Home
-//             </a>
-//             <a href="#about" className="hover:text-blue-500 transition">
-//               About
-//             </a>
-//             <a href="#projects" className="hover:text-blue-500 transition">
-//               Projects
-//             </a>
-//             <a href="#skills" className="hover:text-blue-500 transition">
-//               Skills
-//             </a>
-//             <a href="#contact" className="hover:text-blue-500 transition">
-//               Contact
-//             </a>
-//           </div>
-
-        
-
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// }
-
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
-import { FiBookOpen, FiBriefcase } from "react-icons/fi";
+import { FiBookOpen } from "react-icons/fi";
 import Logo from "./Logo";
-import { usePortfolioMode } from "@/context/PortfolioModeContext";
 
 export default function Navbar() {
-  const { mode, toggle } = usePortfolioMode();
   const [scrolled, setScrolled] = useState(false);
   const [dark, setDark] = useState(true);
 
-  const isAcademic = mode === "academic";
-
-  // Scroll detection
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 24);
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Dark mode toggle
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
-  const links = useMemo(() => {
-    const base = [
-      { href: "#", label: "Home" },
-      { href: "#about", label: "About" },
+  const links = useMemo(
+    () => [
+      { href: "#home", label: "Home" },
+      { href: "#about", label: "Profile" },
       { href: "#projects", label: "Projects" },
-      { href: "#skills", label: "Skills" },
-      { href: "#contact", label: "Contact" },
-    ];
-
-    const academicExtra = [
+      { href: "#skills", label: "Learning" },
       { href: "#reflective", label: "Journal" },
-      { href: "#career-plan", label: "Career Plan" },
+      { href: "#career-plan", label: "Plan" },
       { href: "#certificates", label: "Certificates" },
       { href: "#cv", label: "CV" },
-    ];
-
-    return isAcademic ? [...base, ...academicExtra] : base;
-  }, [isAcademic]);
+      { href: "#contact", label: "Contact" },
+    ],
+    []
+  );
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/70 dark:bg-black/60 backdrop-blur shadow-lg" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "border-b border-white/10 bg-black/75 shadow-lg backdrop-blur"
+          : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        <Logo size={44} withText />
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="flex items-center justify-between gap-4 py-4">
+          <a href="#home" className="shrink-0">
+            <Logo size={44} withText />
+          </a>
 
-        <div className="flex items-center gap-4">
-          {/* Navigation Links */}
-          <div className="space-x-6 text-gray-700 dark:text-gray-300 hidden md:flex">
-            {links.map((l) => (
-              <a key={l.href} href={l.href} className="hover:text-blue-500 transition">
-                {l.label}
+          <div className="hidden lg:flex items-center gap-6 text-sm text-slate-300">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="transition hover:text-blue-400"
+              >
+                {link.label}
               </a>
             ))}
           </div>
 
-          {/* Mode Switch (Premium) */}
-          <button
-            onClick={toggle}
-            className={[
-              "hidden sm:inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm transition",
-              isAcademic
-                ? "border-blue-500/40 bg-blue-600/10 text-blue-600 dark:text-blue-300 hover:bg-blue-600/15"
-                : "border-slate-300/60 dark:border-slate-700 bg-white/60 dark:bg-black/30 text-slate-800 dark:text-slate-200 hover:border-blue-500/50",
-            ].join(" ")}
-            title="Switch portfolio mode"
-          >
-            {isAcademic ? <FiBookOpen /> : <FiBriefcase />}
-            <span className="font-medium">
-              {isAcademic ? "Academic" : "Professional"}
-            </span>
-            <span className="opacity-70">Mode</span>
-          </button>
+          <div className="flex items-center gap-3">
+            <div className="hidden md:inline-flex items-center gap-2 rounded-full border border-blue-500/25 bg-blue-600/10 px-3 py-2 text-sm text-blue-200">
+              <FiBookOpen />
+              Academic Portfolio
+            </div>
 
-          {/* Dark Mode Toggle */}
-          <button
-            onClick={() => setDark(!dark)}
-            className="text-xl text-gray-700 dark:text-gray-300 hover:text-blue-500 transition"
-            aria-label="Toggle dark mode"
-            title="Toggle dark mode"
-          >
-            {dark ? <FaSun /> : <FaMoon />}
-          </button>
-        </div>
-      </div>
-
-      {/* Academic badge (optional but looks premium) */}
-      {isAcademic ? (
-        <div className="w-full border-t border-blue-500/20 bg-blue-600/10 text-blue-700 dark:text-blue-200 text-xs">
-          <div className="max-w-6xl mx-auto px-6 py-2 flex items-center justify-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
-            Academic Portfolio Mode 
+            <button
+              onClick={() => setDark(!dark)}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition hover:border-blue-500/50 hover:text-blue-300"
+              aria-label="Toggle dark mode"
+              title="Toggle dark mode"
+              type="button"
+            >
+              {dark ? <FaSun /> : <FaMoon />}
+            </button>
           </div>
         </div>
-      ) : null}
+
+        <div className="pb-4 lg:hidden">
+          <div className="flex gap-2 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm whitespace-nowrap text-slate-300 transition hover:border-blue-500/40 hover:text-blue-300"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
     </nav>
   );
 }
